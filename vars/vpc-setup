@@ -1,0 +1,22 @@
+vpc_name: "kprofile-vpc"
+
+#vpc range
+vpcCidr: '192.168.0.0/16'
+
+#subnets ranges
+pubsub1cidr: 192.168.1.0/24
+pubsub2cidr: 192.168.2.0/24
+pubsub3cidr: 192.168.3.0/24
+privsub1cide: 192.168.4.0/24
+privsub2cidr: 192.168.5.0/24
+privsub3cidr: 192.168.6.0/24
+
+#Region name
+region: "us-west-2"
+
+#zones
+zone1: us-west-2a
+zone2: us-west-2b
+zone3: us-west-2c
+
+state: present
