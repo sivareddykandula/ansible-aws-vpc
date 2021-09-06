@@ -4,7 +4,7 @@
   tasks:
     - name: Import VPC variables
       include_vars: vars/vpc-setup
-      
+
     - name: Create Kprofile vpc
       ec2_vpc_net:
         name: "{{vpc_name}}"
@@ -15,7 +15,5 @@
         tenancy: default
         state: "{{state}}"
       registery: vpcout
-    
-   - debug:
-        var: vpcout
+  
   
