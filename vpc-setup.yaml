@@ -3,7 +3,7 @@
   gather_facts: False
   tasks:
     - name: Import VPC variables
-      include_vars: vars/vpc-setup
+      include_vars: vars/vpc_setup
 
     - name: Create kprofile VPC
       ec2_vpc_net:
