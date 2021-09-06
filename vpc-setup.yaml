@@ -28,3 +28,64 @@
         tags:
           Name: kpro-pubsub1
       register: pubsub1_out
+
+    - name: Create public subnet2 and zone2
+      ec2_vpc_subnet:
+        vpc_id: "{{vpcout.vpc.id}}"
+        region: "{{ region }}"
+        az: "{{zone2}}"
+        state: "{{ state }}"
+        cidr: "{{pubsub2cidr}}"
+        map_public: yes
+        tags:
+          Name: kpro-pubsub2
+      register: pubsub2_out
+      
+    - name: Create public subnet3 and zone3
+      ec2_vpc_subnet:
+        vpc_id: "{{vpcout.vpc.id}}"
+        region: "{{ region }}"
+        az: "{{zone3}}"
+        state: "{{ state }}"
+        cidr: "{{pubsub1cidr}}"
+        map_public: yes
+        tags:
+          Name: kpro-pubsub3
+      register: pubsub3_out
+
+    - name: Create private subnet1 and zone1
+      ec2_vpc_subnet:
+        vpc_id: "{{vpcout.vpc.id}}"
+        region: "{{ region }}"
+        az: "{{zone1}}"
+        state: "{{ state }}"
+        cidr: "{{privsub1cidr}}"
+        map_public: yes
+        tags:
+          Name: kpro-privsub1
+      register: privsub1_out
+
+    - name: Create private subnet2 and zone2
+      ec2_vpc_subnet:
+        vpc_id: "{{vpcout.vpc.id}}"
+        region: "{{ region }}"
+        az: "{{zone2}}"
+        state: "{{ state }}"
+        cidr: "{{privsub2cidr}}"
+        map_public: yes
+        tags:
+          Name: kpro-privsub2
+      register: privsub2_out
+
+    - name: Create private subnet3 and zone3
+      ec2_vpc_subnet:
+        vpc_id: "{{vpcout.vpc.id}}"
+        region: "{{ region }}"
+        az: "{{zone3}}"
+        state: "{{ state }}"
+        cidr: "{{privsub3cidr}}"
+        map_public: yes
+        tags:
+          Name: kpro-privsub3
+      register: privsub3_out
+      
