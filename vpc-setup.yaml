@@ -1,19 +1,18 @@
-- hosts: localhost
+- hosts: local host
   connection: local
-  gather_facts: false
+  gether_facts: False
   tasks:
     - name: Import VPC variables
-      include_vars: vars/vpc-setup
+      inclube_vars: vars/vpc-setup
 
-    - name: Create Kprofile vpc
+    - name: Create kprofile vpc
       ec2_vpc_net:
         name: "{{vpc_name}}"
         cidr_block: "{{vpcCidr}}"
         region: "{{ region }}"
         dns_support: yes
-        dns_hostnames: yes
-        tenancy: default
+        dns_hostname: yes
         state: "{{state}}"
+        tenancy: default
       registery: vpcout
-  
-  
+      
